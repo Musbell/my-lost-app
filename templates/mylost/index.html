@@ -1,0 +1,687 @@
+{#{% extends 'base.html' %}#}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>My lost.ng</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'assets/nowui/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="{% static 'assets/nowui/css/mdb.min.css' %}" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="{% static 'assets/nowui/css/style.min.css' %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <style>
+        #brnd{
+            font-family: 'Pacifico', cursive;
+        }
+    </style>
+    <style type="text/css">
+
+      html,
+      body,
+      header,
+      .carousel {
+        height: 60vh;
+      }
+
+      @media (max-width: 740px) {
+        html,
+        body,
+        header,
+        .carousel {
+          height: 100vh;
+        }
+      }
+
+      @media (min-width: 800px) and (max-width: 850px) {
+        html,
+        body,
+        header,
+        .carousel {
+          height: 100vh;
+        }
+      }
+
+      @media (min-width: 800px) and (max-width: 850px) {
+              .navbar:not(.top-nav-collapse) {
+                  background: #929FBA!important;
+              }
+          }
+    </style>
+</head>
+
+<body>
+ {% if messages %}
+      <div class="messages">
+      {% for message in messages %}
+        <div {% if message.tags %} class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert"{% endif %}>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        {{ message }}
+        </div>
+      {% endfor %}
+      </div>
+    {% endif %}
+  <header>
+
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-white scrolling-navbar">
+      <div class="container">
+
+        <!-- Brand -->
+        <a class="navbar-brand" href="{% url 'mylost:index' %}">
+          <strong id="brnd">My lost.ng</strong>
+        </a>
+
+        <!-- Collapse -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <!-- Left -->
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'mylost:index' %}">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'blog:blog_page' %}">Latest news</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'mylost:dashboard' %}">Admin</a>
+            </li>
+
+          </ul>
+
+          <!-- Right -->
+          <ul class="navbar-nav nav-flex-icons">
+            <li class="nav-item">
+              <a href="#" class="nav-link" target="_blank">
+                <i class="fa fa-facebook"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link" target="_blank">
+                <i class="fa fa-twitter"></i>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!--Carousel Wrapper-->
+{#    <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">#}
+{##}
+{#      <!--Indicators-->#}
+{#      <ol class="carousel-indicators">#}
+{#        <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>#}
+{#        <li data-target="#carousel-example-1z" data-slide-to="1"></li>#}
+{#        <li data-target="#carousel-example-1z" data-slide-to="2"></li>#}
+{#      </ol>#}
+{#      <!--/.Indicators-->#}
+{##}
+{#      <!--Slides-->#}
+{#      <div class="carousel-inner" role="listbox">#}
+{##}
+{#        <!--First slide-->#}
+{#        <div class="carousel-item active">#}
+{#          <div class="view" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/nature7.jpg'); background-repeat: no-repeat; background-size: cover;">#}
+{##}
+{#            <!-- Mask & flexbox options-->#}
+{#            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">#}
+{##}
+{#              <!-- Content -->#}
+{#              <div class="text-center white-text mx-5 wow fadeIn">#}
+{#                <h1 class="mb-4">#}
+{#                  <strong>Welcome to my lost.ng</strong>#}
+{#                </h1>#}
+{##}
+{#                <p>#}
+{#                  <strong>A platform where you can report your missing items!</strong>#}
+{#                </p>#}
+{##}
+{#                <p class="mb-4 d-none d-md-block">#}
+{#                  <strong>The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000 users. Video and written versions#}
+{#                    available. Create your own, stunning website.</strong>#}
+{#                </p>#}
+{##}
+{#                <a target="_blank" href="#" class="btn btn-outline-white btn-lg">Start free tutorial#}
+{#                  <i class="fa fa-graduation-cap ml-2"></i>#}
+{#                </a>#}
+{#              </div>#}
+{#              <!-- Content -->#}
+{##}
+{#            </div>#}
+{#            <!-- Mask & flexbox options-->#}
+{##}
+{#          </div>#}
+{#        </div>#}
+{#        <!--/First slide-->#}
+{##}
+{#        <!--Second slide-->#}
+{#        <div class="carousel-item">#}
+{#          <div class="view" style="background-image: url('{% static 'assets/nowui/img/nature7.jpg' %}'); background-repeat: no-repeat; background-size: cover;">#}
+{##}
+{#            <!-- Mask & flexbox options-->#}
+{#            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">#}
+{##}
+{#              <!-- Content -->#}
+{#              <div class="text-center white-text mx-5 wow fadeIn">#}
+{#                <h1 class="mb-4">#}
+{#                  <strong>Learn Bootstrap 4 with MDB</strong>#}
+{#                </h1>#}
+{##}
+{#                <p>#}
+{#                  <strong>Best & free guide of responsive web design</strong>#}
+{#                </p>#}
+{##}
+{#                <p class="mb-4 d-none d-md-block">#}
+{#                  <strong>The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000 users. Video and written versions#}
+{#                    available. Create your own, stunning website.</strong>#}
+{#                </p>#}
+{##}
+{#                <a target="_blank" href="https://mdbootstrap.com/bootstrap-tutorial/" class="btn btn-outline-white btn-lg">Start free tutorial#}
+{#                  <i class="fa fa-graduation-cap ml-2"></i>#}
+{#                </a>#}
+{#              </div>#}
+{#              <!-- Content -->#}
+{##}
+{#            </div>#}
+{#            <!-- Mask & flexbox options-->#}
+{##}
+{#          </div>#}
+{#        </div>#}
+{#        <!--/Second slide-->#}
+{##}
+{#        <!--Third slide-->#}
+{#        <div class="carousel-item">#}
+{#          <div class="view" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/47.jpg'); background-repeat: no-repeat; background-size: cover;">#}
+{##}
+{#            <!-- Mask & flexbox options-->#}
+{#            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">#}
+{##}
+{#              <!-- Content -->#}
+{#              <div class="text-center white-text mx-5 wow fadeIn">#}
+{#                <h1 class="mb-4">#}
+{#                  <strong>Learn Bootstrap 4 with MDB</strong>#}
+{#                </h1>#}
+{##}
+{#                <p>#}
+{#                  <strong>Best & free guide of responsive web design</strong>#}
+{#                </p>#}
+{##}
+{#                <p class="mb-4 d-none d-md-block">#}
+{#                  <strong>The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000 users. Video and written versions#}
+{#                    available. Create your own, stunning website.</strong>#}
+{#                </p>#}
+{##}
+{#                <a target="_blank" href="https://mdbootstrap.com/bootstrap-tutorial/" class="btn btn-outline-white btn-lg">Start free tutorial#}
+{#                  <i class="fa fa-graduation-cap ml-2"></i>#}
+{#                </a>#}
+{#              </div>#}
+{#              <!-- Content -->#}
+{##}
+{#            </div>#}
+{#            <!-- Mask & flexbox options-->#}
+{##}
+{#          </div>#}
+{#        </div>#}
+{#        <!--/Third slide-->#}
+{##}
+{#      </div>#}
+{#      <!--/.Slides-->#}
+{##}
+{#      <!--Controls-->#}
+{#      <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">#}
+{#        <span class="carousel-control-prev-icon" aria-hidden="true"></span>#}
+{#        <span class="sr-only">Previous</span>#}
+{#      </a>#}
+{#      <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">#}
+{#        <span class="carousel-control-next-icon" aria-hidden="true"></span>#}
+{#        <span class="sr-only">Next</span>#}
+{#      </a>#}
+{#      <!--/.Controls-->#}
+{##}
+{#    </div>#}
+    <!--/.Carousel Wrapper-->
+<!--Carousel Wrapper-->
+<div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel" style="height: 350px">
+    <!--Indicators-->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+        <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+    </ol>
+    <!--/.Indicators-->
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+        <!--First slide-->
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(130).jpg" alt="First slide" style="height: 350px">
+            <div class="text-center white-text mx-5 wow fadeIn">
+                <h1 class="mb-4">
+                  <strong>Welcome to my lost.ng</strong>
+                </h1>
+
+                <p>
+                  <strong>A platform where you can report your missing items!</strong>
+                </p>
+            </div>
+        </div>
+        <!--/First slide-->
+        <!--Second slide-->
+        <div class="carousel-item">
+            <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(129).jpg" alt="Second slide" style="height: 350px">
+        </div>
+        <!--/Second slide-->
+        <!--Third slide-->
+        <div class="carousel-item">
+            <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(70).jpg" alt="Third slide" style="height: 350px">
+        </div>
+        <!--/Third slide-->
+    </div>
+    <!--/.Slides-->
+    <!--Controls-->
+    <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+    <!--/.Controls-->
+</div>
+<!--/.Carousel Wrapper-->
+  </header>
+
+  <!--Main layout-->
+  <main>
+    <div class="container">
+
+      <!--Section: Main info-->
+      <section class="mt-2 wow fadeIn">
+
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-md-3 mb-3">
+
+          </div>
+          <!--Grid column-->
+            <div class="col-md-6 mb-6" style="margin-top:70px">
+                 <h3 class="h3 text-center mb-5">Search</h3>
+                <hr>
+                <!-- search bar here-->
+                 <form class="d-flex justify-content-center">
+                        <!-- Default input -->
+                        <input type="search" placeholder="Type your device serial number to check if found" aria-label="Search" class="form-control">
+                        <button class="btn btn-primary btn-sm my-0 p" type="submit">
+                            <i class="fa fa-search"></i>
+                        </button>
+
+                    </form>
+            </div>
+          <!--Grid column-->
+          <div class="col-md-3 mb-3">
+
+
+
+          </div>
+          <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+      </section>
+      <!--Section: Main info-->
+
+      <hr class="my-5">
+<section>
+    <div class="card">
+        <div class="card-body">
+
+
+            <div class="row wow fadeIn">
+                <h3 class="h3 text-center mb-5">Report form</h3>
+                <div class="col-lg-12 col-md-12 px-4">
+                    <!-- Material input -->
+                    <div >
+                        <form enctype="multipart/form-data" method="post">
+                            {% csrf_token %}
+                            {% crispy form %}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+      <!--Section: Main features & Quick Start-->
+      <section style="margin-top: 70px">
+
+        <h3 class="h3 text-center mb-5">Video demo</h3>
+
+        <!--Grid row-->
+        <div class="row wow fadeIn">
+
+          <!--Grid column-->
+{#          <div class="col-lg-6 col-md-12 px-4">#}
+{#          </div>#}
+          <!--Grid column-->
+          <div class="col-lg-12 col-md-12">
+
+            <p class="h5 text-center mb-4">Watch our "2 min Quick Start" demo</p>
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/s1uFa9e0vDU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+          </div>
+          <!--/Grid column-->
+
+        </div>
+        <!--/Grid row-->
+
+      </section>
+      <!--Section: Main features & Quick Start-->
+
+      <hr class="my-5">
+
+      <!--Section: Not enough-->
+      <section>
+
+        <h2 class="my-5 h3 text-center">Not enough?</h2>
+
+        <!--First row-->
+        <div class="row features-small mb-5 mt-3 wow fadeIn">
+
+          <!--First column-->
+          <div class="col-md-4">
+            <!-- Card Dark -->
+<div class="card">
+
+  <!-- Card image -->
+  <div class="view overlay">
+    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2821%29.jpg" alt="Card image cap">
+    <a>
+      <div class="mask rgba-white-slight"></div>
+    </a>
+  </div>
+
+  <!-- Card content -->
+  <div class="card-body elegant-color white-text rounded-bottom">
+
+    <!-- Social shares button -->
+    <a class="activator waves-effect mr-4"><i class="fa fa-share-alt white-text"></i></a>
+    <!-- Title -->
+    <h4 class="card-title">Card title</h4>
+    <hr class="hr-light">
+    <!-- Text -->
+    <p class="card-text white-text mb-4">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <!-- Link -->
+    <a href="#!" class="white-text d-flex justify-content-end"><h5>Read more <i class="fa fa-angle-double-right"></i></h5></a>
+
+  </div>
+
+</div>
+<!-- Card Dark -->
+          </div>
+          <!--/First column-->
+
+          <!--Second column-->
+          <div class="col-md-4 flex-center">
+           <!-- Card Dark -->
+<div class="card">
+
+  <!-- Card image -->
+  <div class="view overlay">
+    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2821%29.jpg" alt="Card image cap">
+    <a>
+      <div class="mask rgba-white-slight"></div>
+    </a>
+  </div>
+
+  <!-- Card content -->
+  <div class="card-body elegant-color white-text rounded-bottom">
+
+    <!-- Social shares button -->
+    <a class="activator waves-effect mr-4"><i class="fa fa-share-alt white-text"></i></a>
+    <!-- Title -->
+    <h4 class="card-title">Card title</h4>
+    <hr class="hr-light">
+    <!-- Text -->
+    <p class="card-text white-text mb-4">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <!-- Link -->
+    <a href="#!" class="white-text d-flex justify-content-end"><h5>Read more <i class="fa fa-angle-double-right"></i></h5></a>
+
+  </div>
+
+</div>
+<!-- Card Dark -->
+          </div>
+          <!--/Second column-->
+
+          <!--Third column-->
+          <div class="col-md-4 mt-2">
+              <!-- Card Dark -->
+<div class="card">
+
+  <!-- Card image -->
+  <div class="view overlay">
+    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2821%29.jpg" alt="Card image cap">
+    <a>
+      <div class="mask rgba-white-slight"></div>
+    </a>
+  </div>
+
+  <!-- Card content -->
+  <div class="card-body elegant-color white-text rounded-bottom">
+
+    <!-- Social shares button -->
+    <a class="activator waves-effect mr-4"><i class="fa fa-share-alt white-text"></i></a>
+    <!-- Title -->
+    <h4 class="card-title">Card title</h4>
+    <hr class="hr-light">
+    <!-- Text -->
+    <p class="card-text white-text mb-4">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <!-- Link -->
+    <a href="#!" class="white-text d-flex justify-content-end"><h5>Read more <i class="fa fa-angle-double-right"></i></h5></a>
+
+  </div>
+
+</div>
+<!-- Card Dark -->
+
+          </div>
+          <!--/Third column-->
+
+        </div>
+        <!--/First row-->
+
+      </section>
+      <!--Section: Not enough-->
+
+      <hr class="mb-5">
+
+    </div>
+  <h1 class="my-5 text-center"><a href="{% url 'mylost:suggest' %}">Have any Suggestion?</a></h1>
+  </main>
+  <!--Main layout-->
+
+  <!--Footer-->
+ <!-- Footer -->
+<footer class="page-footer font-small unique-color-dark">
+
+    <div style="background-color: #6351ce;">
+      <div class="container">
+
+        <!-- Grid row-->
+        <div class="row py-4 d-flex align-items-center">
+
+          <!-- Grid column -->
+          <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+            <h6 class="mb-0">Get connected with us on social networks!</h6>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+            <!-- Facebook -->
+            <a class="fb-ic">
+              <i class="fa fa-facebook white-text mr-4"> </i>
+            </a>
+            <!-- Twitter -->
+            <a class="tw-ic">
+              <i class="fa fa-twitter white-text mr-4"> </i>
+            </a>
+            <!-- Google +-->
+            <a class="gplus-ic">
+              <i class="fa fa-google-plus white-text mr-4"> </i>
+            </a>
+            <!--Linkedin -->
+            <a class="li-ic">
+              <i class="fa fa-linkedin white-text mr-4"> </i>
+            </a>
+            <!--Instagram-->
+            <a class="ins-ic">
+              <i class="fa fa-instagram white-text"> </i>
+            </a>
+
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row-->
+
+      </div>
+    </div>
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left mt-5">
+
+      <!-- Grid row -->
+      <div class="row mt-3">
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+          <!-- Content -->
+          <h6 class="text-uppercase font-weight-bold">el-bahrain concept nig ltd</h6>
+          <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>el-bahrain concept & general merchandize nigeria limted.</p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+          <!-- Links -->
+          <h6 class="text-uppercase font-weight-bold">Products</h6>
+          <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <a href="#!"></a>
+          </p>
+          <p>
+            <a href="#!"></a>
+          </p>
+          <p>
+            <a href="#!"></a>
+          </p>
+          <p>
+            <a href="#!"></a>
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+          <!-- Links -->
+          <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+          <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <a href="{% url 'mylost:about' %}">About</a>
+          </p>
+          <p>
+            <a href="#!">Become an Agent</a>
+          </p>
+          <p>
+            <a href="{% url 'mylost:terms' %}">Terms and conditions</a>
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+          <!-- Links -->
+          <h6 class="text-uppercase font-weight-bold">Contact</h6>
+          <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <i class="fa fa-home mr-3"></i> Kano state,Nigeria</p>
+          <p>
+            <i class="fa fa-envelope mr-3"></i> info@mylost.ng</p>
+          <p>
+            <i class="fa fa-phone mr-3"></i> +2348061635326</p>
+          <p>
+            <i class="fa fa-print mr-3"></i> +2348120600159</p>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2018 Copyright:
+      <a href="#"> el-bahrain concept nig.ltd</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
+  <!--/.Footer-->
+
+     <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="{% static 'assets/nowui/js/jquery-3.3.1.min.js' %}"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="{% static 'assets/nowui/js/popper.min.js' %}"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="{% static 'assets/nowui/js/bootstrap.min.js' %}"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="{% static 'assets/nowui/js/mdb.min.js' %}"></script>
+      <!-- Initializations -->
+  <script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+  </script>
+</body>
+
+</html>

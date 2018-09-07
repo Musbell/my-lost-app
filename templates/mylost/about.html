@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+<div class="container" style="margin-top: 100px">
+<div class="row">
+    <div class="col-md-3" style="border-right: 1px solid grey">
+        <img class="rounded" src="{% static 'assets/img/kamal1.jpg' %}"   alt="" style="width: 200px;height: 200px">
+    </div>
+    <div class="col-md-9">
+        <h1 class="title">About the Developer</h1>
+        <hr>
+        <p>MY Biography goes here......</p>
+    </div>
+</div>
+    <hr>
+<h1 class="title">The software</h1>
+<p>Some Details about the software goes here</p>
+</div>
+
+
+{% endblock %}

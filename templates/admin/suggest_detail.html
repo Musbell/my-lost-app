@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+
+
+{% block body %}
+
+    <div class="container">
+    <h2>Name: {{ suggest.name }}</h2>
+    <h>Email:  {{ suggest.email }}</h>
+        <hr>
+    <p>{{ suggest.message }}</p>
+    </div>
+
+{% endblock %}

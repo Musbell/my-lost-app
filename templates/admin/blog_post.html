@@ -1,0 +1,16 @@
+{% extends 'base_admin.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+    <div class="container">
+<div class="card mt-lg-5">
+    <form enctype="multipart/form-data" method="post" style="margin: 30px">
+        {% csrf_token %}
+        {% crispy form %}
+
+    </form>
+</div>
+</div>
+{% endblock %}
