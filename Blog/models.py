@@ -11,3 +11,8 @@ class Blog(models.Model):
 
     def __str__(self):
         return self.title
+
+
+
+class SubscribeMail(models.Model):
+    email = models.EmailField(max_length=100)

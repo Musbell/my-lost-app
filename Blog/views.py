@@ -18,28 +18,16 @@ class BlogView(SuccessMessageMixin, CreateView):
 
 def blog(request):
     top_post = Blog.objects.all()[::-1]
+    recent_post = Blog.objects.all()[::-1]
 
 
-    context = {'top_posts': top_post}
+    context = {'top_posts': top_post, 'recent_posts': recent_post}
 
     return render(request, 'blog/home.html', context)
 
 
 
 
-
-# class BlogDetailView(generic.DetailView):
-#     model = Blog
-#     template_name = 'blog/blog_detail.html'
-
-
-
-def blog_detail(request, pk=None):
-    if pk:
-        post = Blog.objects.get(pk=pk)
-    else:
-        customer_prof = request.customer_prof
-
-    args = {'post': post}
-
-    return render(request, 'blog/blog_detail.html', args)
+class BlogDetailView(generic.DetailView):
+    model = Blog
+    template_name = 'blog/blog_detail.html'

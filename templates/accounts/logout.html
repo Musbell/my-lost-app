@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+
+{% block navbar %}
+<header>
+
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+      <div class="container">
+
+        <!-- Brand -->
+        <a class="navbar-brand" href="{% url 'mylost:index' %}">
+          <strong id="brnd">My lost.ng</strong>
+        </a>
+
+        <!-- Collapse -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <!-- Left -->
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'mylost:index' %}">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+          </ul>
+          <!-- Right -->
+          <ul class="navbar-nav nav-flex-icons">
+            <li class="nav-item">
+              <a href="#" class="nav-link" target="_blank">
+                <i class="fa fa-facebook"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link" target="_blank">
+                <i class="fa fa-twitter"></i>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </nav>
+
+</header>
+<!--Main Navigation-->
+
+{% endblock %}
+
+{% block body  %}
+<div class="container" style="margin-top: 150px">
+<div class="row" style="margin: 15px">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div class="card" style="margin: 15px">
+            <h2 class="text-center">Login</h2>
+            <form method="post" style="margin: 15px">
+                {% csrf_token %}
+                {% crispy form %}
+            </form>
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+</div>
+{% endblock %}

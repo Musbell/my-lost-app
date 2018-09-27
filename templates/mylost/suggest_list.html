@@ -2,11 +2,12 @@
 {% load staticfiles %}
 {% load crispy_forms_tags %}
 
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
 
 
 {% block content %}
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
+
     <div class="container-fluid" style="margin-top: 50px; background-color: white">
     <header><h3><strong>Suggestions</strong></h3></header>
 
@@ -33,9 +34,9 @@
             <tr>
                </td>
                 <td>{{ suggest.date }}</td>
-                <a href="{% url 'mylost:suggest_detail' suggest.id %}">
-                <td>{{ suggest.name}}</td>
-                </a>
+
+                <td><a href="{% url 'mylost:suggest_detail' suggest.id %}"> {{ suggest.name}} </a></td>
+
                  <td>{{ suggest.email }}</td>
                 <td>{{ suggest.title }}</td>
             </tr>

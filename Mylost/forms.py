@@ -3,7 +3,7 @@ from crispy_forms.layout import Submit, HTML
 from crispy_forms.bootstrap import FormActions
 from crispy_forms.layout import Layout, ButtonHolder, Submit
 from django import forms
-from Mylost.models import ReportModel, Suggestion
+from Mylost.models import ReportModel, Suggestion, AgentRequest
 import datetime
 from datetime import datetime, timedelta
 from django.conf import settings
@@ -68,6 +68,40 @@ class SuggestForm(forms.ModelForm):
             'title',
             'email',
             'message',
+
+
+            ButtonHolder(
+                Submit('Submit', 'Submit', css_class='btn-success')
+            )
+        )
+
+
+class AgentRequestForm(forms.ModelForm):
+    class Meta:
+        model = AgentRequest
+        fields = (
+            'name',
+            'state',
+            'email',
+            'address',
+            'phone',
+            'short_bio',
+
+
+        )
+
+    def __init__(self, *args, **kwargs):
+        super(AgentRequestForm, self).__init__(*args, **kwargs)
+
+        self.form_name = 'AgentRequestForm'
+        self.helper = FormHelper()
+        self.helper.layout = Layout(
+            'name',
+            'state',
+            'email',
+            'address',
+            'phone',
+            'short_bio',
 
 
             ButtonHolder(

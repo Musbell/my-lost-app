@@ -6,11 +6,14 @@
 
 {% block body %}
 
-    <div class="container">
-    <h2>Name: {{ suggest.name }}</h2>
-    <h>Email:  {{ suggest.email }}</h>
+    <div class="container" style="margin-top: 100px">
+    <h1 class="page-header">Suggestion</h1><br>
         <hr>
-    <p>{{ suggest.message }}</p>
+    <h2>Name: {{ suggestion.name }}</h2>
+    <h>Email:  {{ suggestion.email }}</h>
+        <hr>
+        <h3 class="page-header">Title: {{ suggestion.title }}</h3>
+    <p>{{ suggestion.message }}</p>
     </div>
 
 {% endblock %}

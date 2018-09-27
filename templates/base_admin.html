@@ -62,9 +62,9 @@
                         <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
                 <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Add user</a>
+                    <a class="dropdown-item" href="{% url 'accounts:register' %}">Add user</a>
                     <a class="dropdown-item" href="{% url 'mylost:suggest_list' %}">Suggestions</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" href="{% url 'accounts:logout' %}">Logout</a>
                 </div>
             </li>
 
@@ -80,29 +80,33 @@
 
             </div>
         </nav>
+
         <!-- Navbar -->
 
         <!-- Sidebar -->
         <div class="sidebar-fixed position-fixed">
 
             <a class="logo-wrapper waves-effect">
-                <img src="https://mdbootstrap.com/img/logo/mdb-email.png" class="img-fluid" alt="">
+                <img src="#" alt="">LOGO HERE..
             </a>
 
             <div class="list-group list-group-flush">
-                <a href="#" class="list-group-item active waves-effect">
+                <a href="{% url 'mylost:dashboard' %}" class="list-group-item active waves-effect">
                     <i class="fa fa-pie-chart mr-3"></i>Dashboard
                 </a>
                 <a href="#" class="list-group-item list-group-item-action waves-effect">
                     <i class="fa fa-user mr-3"></i>Users</a>
-                <a href="#" class="list-group-item list-group-item-action waves-effect">
+                <a href="{% url 'mylost:reports' %}" class="list-group-item list-group-item-action waves-effect">
                     <i class="fa fa-table mr-3"></i>Reports</a>
-                <a href="#" class="list-group-item list-group-item-action waves-effect"><a href="#" class="list-group-item list-group-item-action waves-effect">
+                 <a href="{% url 'mylost:found' %}" class="list-group-item list-group-item-action waves-effect">
                     <i class="fa fa-table mr-3"></i>Found</a>
-                    <i class="fa fa-map mr-3"></i>Maps</a>
+                 <a href="{% url 'blog:blog-post' %}" class="list-group-item list-group-item-action waves-effect">
+                    <i class="fa fa-book mr-3"></i>Blog post</a>
+                 <a href="{% url 'mylost:suggest_list' %}" class="list-group-item list-group-item-action waves-effect">
+                    <i class="fa fa-book mr-3"></i>Suggestions</a>
                 <a href="#" class="list-group-item list-group-item-action waves-effect">
-                    <i class="fa fa-money mr-3"></i>Orders</a>
-            </div>
+                    <i class="fa fa-map mr-3"></i>Maps</a>
+               </div>
 
         </div>
         <!-- Sidebar -->
@@ -121,7 +125,7 @@
                 <div class="card-body d-sm-flex justify-content-between">
 
                     <h4 class="mb-2 mb-sm-0 pt-1">
-                        <a href="{% url 'mylost:index' %}" target="_blank">Home Page</a>
+                        <a href="{% url 'mylost:index' %}">Home Page</a>
                         <span>/</span>
                         <span>Dashboard</span>
                     </h4>
