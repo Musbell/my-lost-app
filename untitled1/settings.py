@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 from django.template.loader import get_template
@@ -140,3 +141,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'untitled1/media/')
 
 TEMPLATES_PACK = 'bootstrap4'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
+
