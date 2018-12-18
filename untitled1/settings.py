@@ -141,6 +141,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'untitled1/media/')
 
 TEMPLATES_PACK = 'bootstrap4'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+django_heroku.settings(locals())
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
