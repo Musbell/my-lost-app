@@ -3,7 +3,7 @@ from django.views.generic.edit import CreateView
 from django.views import generic
 from django.contrib.messages.views import SuccessMessageMixin
 from .models import Blog
-from .forms import BlogForm, SubscriberForm, CommentForm
+from .forms import BlogForm
 
 # Create your views here.
 
