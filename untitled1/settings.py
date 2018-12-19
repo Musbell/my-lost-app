@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'Mylost.apps.MylostConfig',
     'Blog',
     'Accounts',
-    'UserApp',
     'crispy_forms'
 ]
 
