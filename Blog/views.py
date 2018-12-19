@@ -16,14 +16,14 @@ class BlogView(SuccessMessageMixin, CreateView):
 
 
 
-def blog(request):
-
-    top_post = Blog.objects.all()[::-1]
-    recent_post = Blog.objects.all()[::-1]
-
-    context = {'top_posts': top_post, 'recent_posts': recent_post}
-
-    return render(request, 'blog/home.html', context)
+# def blog(request):
+#
+#     top_post = Blog.objects.all()[::-1]
+#     recent_post = Blog.objects.all()[::-1]
+#
+#     context = {'top_posts': top_post, 'recent_posts': recent_post}
+#
+#     return render(request, 'blog/home.html', context)
 
 
 
