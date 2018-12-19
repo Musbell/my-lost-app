@@ -4,79 +4,90 @@ from django import forms
 from django.contrib.auth.models import User
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, ButtonHolder, Submit
-# from .models import UserProfileModel
+from .models import Profile
 
-# class RegistrationForm(UserCreationForm):
-#     class Meta:
-#         model = UserProfileModel
-#         fields = (
-#             'username',
-#             'password1',
-#             'password2',
-#             'first_name',
-#             'last_name',
-#             'email',
-#             'gender',
-#             'date_of_birth',
-#             'state',
-#             'occupation',
-#             'address',
-#             'local_government',
-#             'nationality',
-#             'image',
-#         )
-#
-#     def __init__(self, *args, **kwargs):
-#         super(RegistrationForm, self).__init__(*args, **kwargs)
-#
-#         self.form_name = 'bio_data_form'
-#         self.helper = FormHelper()
-#         self.helper.layout = Layout(
-#             'username',
-#             'password1',
-#             'password2',
-#             'first_name',
-#             'last_name',
-#             'email',
-#             'gender',
-#             'date_of_birth',
-#             'state_of_origin',
-#             'occupation',
-#             'address',
-#             'local_government',
-#             'nationality',
-#             'image',
-#
-#             ButtonHolder(
-#                 Submit('register user', 'Register user', css_class='btn-primary')
-#             )
-#         )
+class ProfileForm(UserCreationForm):
+    class Meta:
+        model = Profile
+        fields = (
+            'state',
+            'local_government',
+            'nationality',
+            'occupation',
+            'gender',
+            'date_of_birth',
+            'address',
+            'image',
+            'phone',
+        )
 
-# class RegistrationForm(UserCreationForm):
-#     email = forms.EmailField(required=True)
-#
-#     class Meta:
-#         model = User
-#         fields = (
-#             'username',
-#             'first_name',
-#             'last_name',
-#             'email',
-#             'password1',
-#             'password2'
-#         )
-#
-#     def save(self, commit=True):
-#         user = super(RegistrationForm, self).save(commit=False)
-#         user.first_name = self.cleaned_data['first_name']
-#         user.last_name = self.cleaned_data['last_name']
-#         user.email = self.cleaned_data['email']
-#
-#
-#         if commit:
-#             user.save()
-#
-#         return user
+    def __init__(self, *args, **kwargs):
+        super(ProfileForm, self).__init__(*args, **kwargs)
+
+        self.form_name = 'reg_form'
+        self.helper = FormHelper()
+        self.helper.layout = Layout(
+            'state',
+            'local_government',
+            'nationality',
+            'occupation',
+            'gender',
+            'date_of_birth',
+            'address',
+            'image',
+            'phone',
+
+            ButtonHolder(
+                Submit('register user', 'Register user', css_class='btn-primary')
+            )
+        )
+
+class RegistrationForm(UserCreationForm):
+    email = forms.EmailField(required=True)
+
+    class Meta:
+        model = User
+        fields = (
+            'username',
+            'first_name',
+            'last_name',
+            'email',
+            'password1',
+            'password2',
+
+
+        )
+
+    def __init__(self, *args, **kwargs):
+        super(RegistrationForm, self).__init__(*args, **kwargs)
+
+        self.form_name = 'user_reg_form'
+        self.helper = FormHelper()
+        self.helper.layout = Layout(
+            'username',
+            'first_name',
+            'last_name',
+            'email',
+            'password1',
+            'password2',
+
+            ButtonHolder(
+                Submit('register user', 'Sign up user', css_class='btn-primary')
+                )
+            )
+    # def save(self, commit=True):
+    #     user = super(RegistrationForm, self).save(commit=False)
+    #     user.first_name = self.cleaned_data['first_name']
+    #     user.last_name = self.cleaned_data['last_name']
+    #     user.email = self.cleaned_data['email']
+    #
+    #
+    #     if commit:
+    #         user.save()
+    #
+    #     return user
+
+
 
 
 class EditProfileForm(UserChangeForm):

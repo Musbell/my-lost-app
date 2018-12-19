@@ -1,0 +1,4 @@
+Congratulations!
+Your device {{ deviceName }} {{ deviceModel}} with the serial number {{ serialNumber }} has been found.
+kindly visit the nearest police station to retrieve your device or visit www.mylost.ng for more information.
+You can also contact us at 081200600159.

@@ -1,0 +1,18 @@
+{#{% extends 'base.html' %}#}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+   <!--Card : Dynamic content wrapper-->
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            {% crispy form %}
+        </form>
+        <!-- Default form login -->
+
+
+    </div>
+    <!--/.Card : Dynamic content wrapper-->
+
+{% endblock %}

@@ -68,6 +68,7 @@
             <form method="post" style="margin: 15px">
                 {% csrf_token %}
                 {% crispy form %}
+                <p style="margin-left: 15px"><a href="{% url 'accounts:reset_password' %}">Forgot password?</a></p>
             </form>
         </div>
     </div>

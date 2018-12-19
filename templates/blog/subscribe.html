@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+   <!--Card : Dynamic content wrapper-->
+                        <div class="card mb-4 text-center wow fadeIn">
+
+                            <div class="card-header">Do you want to get informed about new articles?</div>
+
+                            <!--Card content-->
+                            <div class="card-body">
+
+                                <!-- Default form login -->
+                                <form method="post">
+                                    {% csrf_token %}
+                                    {% crispy form %}
+                               </form>
+                                <!-- Default form login -->
+
+                            </div>
+
+                        </div>
+                        <!--/.Card : Dynamic content wrapper-->
+
+
+
+
+
+
+{% endblock %}

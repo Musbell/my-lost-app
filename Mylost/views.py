@@ -1,19 +1,40 @@
-from django.views.generic.edit import CreateView
-from django.contrib.messages.views import SuccessMessageMixin
-from django.views.generic.base import TemplateView
+from django.conf import settings
 # from django.core.urlresolvers import reverse_lazy
-from django.contrib.auth.models import User
-from django.views.generic.detail import DetailView
-from django.db.models import Count
 from django.contrib import messages
-from django.views import generic
-from django.shortcuts import render, redirect
-from .models import ReportModel, Suggestion, AgentRequest, FoundModel
-from .forms import ReportForm, SuggestForm, AgentRequestForm
-import operator
+from django.contrib.messages.views import SuccessMessageMixin
 from django.db.models import Q
+from django.shortcuts import render, redirect
+from django.views import generic
+from django.views.generic.base import TemplateView
+from django.views.generic.edit import CreateView
+from django.core.mail import send_mail
+from django.template.loader import get_template
+
+from .forms import ReportForm, SuggestForm, AgentRequestForm
+from .models import ReportModel, Suggestion, AgentRequest, FoundModel
+# from collections import OrderedDictb
+
 
 # Create your views here.
+def checker_view(request):
+    if request.method == 'POST':
+        srch2 = request.POST['srh1']
+
+        if srch2:
+            match1 = ReportModel.objects.filter(Q(serialNumber__iexact=srch2))
+
+
+            if match1:
+
+                return render(request, 'mylost/checker.html', {'sr1': match1})
+            else:
+                messages.error(request, 'No result yet for the requested device!')
+        else:
+            return redirect('/index/')
+
+    return render(request, 'mylost/checker.html')
+
+
 
 class IndexView(SuccessMessageMixin, CreateView):
     template_name = "mylost/index.html"
@@ -25,10 +46,17 @@ class IndexView(SuccessMessageMixin, CreateView):
 
 
 
+
+
 def dashboard1(request):
     reports = ReportModel.objects.count()
+    suggest = Suggestion.objects.count()
+    requests = AgentRequest.objects.count()
+    # found   =  ReportModel.device_status.count()
 
-    context = {'reports': reports}
+    context = {'reports': reports,
+               'suggest': suggest,
+               'requests': requests}
 
     return render(request, 'admin/admin_index.html', context)
 
@@ -44,7 +72,7 @@ class SuggestSendView(SuccessMessageMixin, CreateView):
     template_name = "mylost/suggest.html"
     model = Suggestion
     form_class = SuggestForm
-    success_url = '/index'
+    success_url = '/suggest'
     success_message = "%(name)s message was sent successfully"
 
 
@@ -52,7 +80,7 @@ class AgentRequestView(SuccessMessageMixin, CreateView):
     template_name = "mylost/agent_request.html"
     model = AgentRequest
     form_class = AgentRequestForm
-    success_url = '/index'
+    success_url = '/agent-request'
     success_message = "%(name)s message was sent successfully"
 
 
@@ -92,7 +120,6 @@ class TermsView(TemplateView):
 
 
 def scan(request):
-    print(request.session)
     if request.method == 'POST':
         srch = request.POST['srh']
 
@@ -101,8 +128,24 @@ def scan(request):
 
 
             if match:
-                found = match
-                FoundModel = found
+                match.update(device_status='FOUND')
+                subject = 'Congratulations!your device is been found.'
+                from_email = settings.DEFAULT_FROM_EMAIL
+                to_email = [settings.DEFAULT_FROM_EMAIL]
+                #
+                # context = {
+                #     'match': match
+                #
+                # }
+
+                # found_message = get_template('mylost/found_message.txt').render(context)
+                found_message = f'Congratulations! Your device' \
+                                # f'with the IMEI number {match.serialNumber}has been found! kindly visit one of our ' \
+                                # f' centers ot the nearest police station to claim and retrieve your device'
+                send_mail(subject=subject, message=found_message, from_email=from_email, recipient_list=to_email,
+                          fail_silently=True)
+
+
                 return render(request, 'admin/scan.html', {'sr': match})
             else:
                 messages.error(request, 'No result yet for the requested device!')

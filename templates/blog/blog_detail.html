@@ -8,50 +8,65 @@
 
 <div class="row wow fadeIn">
            <div class="col-lg-9 col-md-9 px-4" style="margin-top: 10px">
-
-            <h2 class="title"><strong>{{ blog.title }}</strong></h2>
-            <img  class="img-fluid" src="{{ blog.image.url }}" style="width: 600px; height: 300px" alt="post image">
+             <div>
+            <h2 class="title m-2"><strong>{{ blog.title }}</strong></h2>
+            <img  class="img-fluid m-2 mr-2" src="{{ blog.image.url }}" style="width: 750px; height: 300px; overflow: hidden" alt="post image">
             <br>
-            <p>Author: <strong>{{ blog.author }}</strong>  Updated: {{ blog.updated }}</p>
-            <p>{{ blog.content|linebreaks }}</p>
-            <div style="margin: 10px">
+            <p class="m-2">Author: <strong>{{ blog.author }}</strong>  Updated: {{ blog.updated }}</p>
+            <p class="ml-3">{{ blog.content|linebreaks }}</p>
+            <div class="m-2">
+
                 <!-- begin wwww.htmlcommentbox.com -->
                 <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">HTML Comment Box</a> is loading comments...</div>
                 <link rel="stylesheet" type="text/css" href="//www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
                 <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24qMF3QPJUNzTtD1WXDAL.W1"+"&opts=16862&num=10&ts=1536162695897");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
                 <!-- end www.htmlcommentbox.com -->
             </div>
+            </div>
         </div>
-      <div class="col-md-3 bg-faded sidebar" style="border: 1px solid gainsboro;display: block; margin-top: 10px">
-            <h2 class="title"><strong>Recent Posts</strong></h2>
-            <hr>
-{#            {% for recent in recent_posts %}#}
-                <a href ="{% url 'blog:blog_detail' blog.pk %}">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <ul>
-                        <li style="margin-right:5px;list-style: none">
-                            <img class="img-fluid rounded" src="{{ blog.image.url }}" style="height:100px;width:100px">
-                        </li>
-                    </ul>
+      <div class="col-md-3">
+                   <!--Card-->
+                        <div class="card mb-4 wow fadeIn">
+
+                            <div class="card-header">Related articles</div>
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                 {% for recent in recent_posts %}
+                                <ul class="list-unstyled">
+                                    <li class="media">
+                                         <img class="img-circle" src="{{ recent.image.url }}"  style="height:100px;width:100px; margin-right: 10px">
+                                        <div class="media-body">
+                                            <a href="{% url 'blog:blog_detail' recent.id %}">
+                                                <h5 class="mt-0 mb-1 font-weight-bold">{{ recent.title }}</h5>
+                                            </a>
+                                           <p style="margin: 15px">{{ recent.content|truncatechars:30 |linebreaks }}</p>
+                                        </div>
+                                    </li>
+
+
+                                </ul>
+                                {% endfor %}
+                            </div>
+
                         </div>
-                        <div class="col-md-6"> <span><h5>{{ blog.title }}</h5></span></div>
-                    </div>
-                </a>
-{#               {% endfor %}#}
-               <br>
-           <!--featured videos-->
-               <div style="margin-top: 15px;border-top: solid 1px">
-                   <h3 class="page-header text-center">Featured videos</h3>
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe width="auto" height="auto" src="https://www.youtube.com/embed/s1uFa9e0vDU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    </div>
-               </div>
-           <!--About me-->
-               <div style="margin-top:20px;border-top: solid 1px;border-bottom: solid 1px;min-height: 300px">
+                        <!--/.Card-->
+                        <!--subscribe email-->
+{#                        {% include 'blog/subscribe.html' %}#}
+                        <!--end of email subscribe-->
+                    <!--Video player-->
+                        <div class="card" style="margin-top: 15px">
+                            <h3 class="page-header text-center">Featured videos</h3>
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe width="auto" height="auto" src="https://www.youtube.com/embed/s1uFa9e0vDU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    <!--end of video player-->
+                     <hr class="my-5">
+               <div style="margin-top:20px;min-height: 300px">
                    <h3 class="page-header text-center" style="color: #007bff">Advert here</h3>
                    <!--Carousel Wrapper-->
-                   <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel" style="height: 350px">
+                   <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel" style="height: 250px">
                        <!--Indicators-->
                        <ol class="carousel-indicators">
                            <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
@@ -101,22 +116,7 @@
                    <!--/.Carousel Wrapper-->
 
                </div>
-               <br>
-               <!--Subscribe-->
-               <div style="margin-top:20px; min-height: 300px">
-                   <h3 class="page-header text-center"style="color: #007bff">Subscribe now</h3>
-                   <p>Subscribe to our mailing list to receive updates from the blog</p>
-                   <form  method="post" style="margin: 15px">
-                       <input class="form-control" type="text">
-                   </form>
-
-               </div>
-
-        </div>
-
-
-
-
+                </div>
 
 </div>
 

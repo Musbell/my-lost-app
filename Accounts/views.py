@@ -3,15 +3,20 @@ from django.views import generic
 from django.views.generic.base import TemplateView
 from django.contrib.auth import authenticate, login, logout
 # from django.core.urlresolvers import
+from django.conf import settings
 from django.contrib.auth.forms import (
     UserCreationForm,
     UserChangeForm,
-    PasswordChangeForm
+    PasswordChangeForm,
+    PasswordResetForm
 )
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+# from django.contrib.auth.tokens.PasswordResetTokenGenerator import token_generator
+
+from django.core.mail import send_mail
 
 from .forms import *
 
@@ -52,14 +57,17 @@ def login_redirect(request):
 def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
+        # profile_form = RegistrationForm(request.POST)
         if form.is_valid():
             user = form.save()
+            # user = profile_form.save()
+            # and profile_form.is_valid():
             user.refresh_from_db()
             user.save()
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=user.username, password=raw_password)
             login(request, user)
-            return redirect('/index')
+            return redirect('accounts/profile')
     else:
         form = RegistrationForm()
 
@@ -103,3 +111,15 @@ def change_password(request):
         form = PasswordChangeForm(user=request.user)
         args = {'form': form}
         return render(request, 'accounts/change_password.html', args)
+
+
+# class PasswordResetView:
+#     template_name = 'accounts/password_reset_form.html'
+#     form_class = PasswordResetForm
+#     # token_generator = default_token_generator
+#     success_url = 'login/'
+#     from_email = settings.DEFAULT_FROM_EMAIL
+#     extra_context = {}
+
+
+

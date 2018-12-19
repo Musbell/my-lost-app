@@ -2,6 +2,13 @@
 {% load staticfiles %}
 {% load crispy_forms_tags %}
 
+{% load static %}
+// Include FusionCharts core file
+<script type="text/javascript" src=" http://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+// Include FusionCharts Theme file
+<script type="text/javascript" src=" http://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+<script type="text/javascript" src="{% static "js/fusioncharts.js" %}"></script>
+
 
 {% block content %}
   <div class="row wow fadeIn">
@@ -55,7 +62,7 @@
                             <!-- List group links -->
                             <div class="list-group list-group-flush">
                                 <a class="list-group-item list-group-item-action waves-effect">Reports
-                                    <span class="badge badge-success badge-pill pull-right">{{ reports}} items
+                                    <span class="badge badge-danger badge-pill pull-right">{{ reports }} devices
                                         <i class="fa fa-arrow-up ml-1"></i>
                                     </span>
                                 </a>
@@ -65,13 +72,13 @@
                                     </span>
                                 </a>
                                 <a class="list-group-item list-group-item-action waves-effect">Found
-                                    <span class="badge badge-primary badge-pill pull-right">14</span>
+                                    <span class="badge badge-success badge-pill pull-right">2 devices</span>
                                 </a>
-                                <a class="list-group-item list-group-item-action waves-effect">Issues
-                                    <span class="badge badge-primary badge-pill pull-right">123</span>
+                                <a class="list-group-item list-group-item-action waves-effect">Agent request
+                                    <span class="badge badge-primary badge-pill pull-right">{{ requests }} request(s)</span>
                                 </a>
-                                <a class="list-group-item list-group-item-action waves-effect">Messages
-                                    <span class="badge badge-primary badge-pill pull-right">8</span>
+                                <a class="list-group-item list-group-item-action waves-effect">Suggestions
+                                    <span class="badge badge-danger badge-pill pull-right">{{ suggest }}</span>
                                 </a>
                             </div>
                             <!-- List group links -->

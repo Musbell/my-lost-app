@@ -1,19 +1,22 @@
-{% extends 'base.html' %}
+{% extends 'base_admin.html' %}
 {% load staticfiles %}
 {% load crispy_forms_tags %}
 
 
 
-{% block body %}
+{% block content %}
 
-    <div class="container" style="margin-top: 100px">
-    <h1 class="page-header">Suggestion</h1><br>
+    <div class="card">
+        <div class="container" style="margin-top: 40px">
+    <h1 class="text-center">Suggestion</h1><br>
+            <h4>Sender: {{ suggestion.name }}</h4>
+    <p>Email:  {{ suggestion.email }}</p>
         <hr>
-    <h2>Name: {{ suggestion.name }}</h2>
-    <h>Email:  {{ suggestion.email }}</h>
-        <hr>
-        <h3 class="page-header">Title: {{ suggestion.title }}</h3>
-    <p>{{ suggestion.message }}</p>
+
+{#        <hr>#}
+        <h3 class="text-center">Title: {{ suggestion.title }}</h3>
+    <p class="text-center">{{ suggestion.message }}</p>
+    </div>
     </div>
 
 {% endblock %}

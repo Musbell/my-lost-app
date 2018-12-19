@@ -16,6 +16,8 @@
     <!-- Your custom styles (optional) -->
     <link href="{% static 'assets/css/style.min.css' %}" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    <!-- MDBootstrap Datatables  -->
+<link href="{% static 'assets/css/addons/datatables.min.css' %}" rel="stylesheet">
  <style>
         #brnd{
            font-family: 'Pacifico', cursive;
@@ -34,7 +36,7 @@
 
                 <!-- Brand -->
                 <a class="navbar-brand waves-effect" href="{% url 'mylost:index' %}">
-                    <strong class="blue-text" id="brnd">My lost.ng</strong>
+                    <strong class="blue-text" id="brnd">Mylost.ng</strong>
                 </a>
 
                 <!-- Collapse -->
@@ -51,6 +53,11 @@
                         <li class="nav-item active">
                             <a class="nav-link waves-effect" href="{% url 'mylost:dashboard' %}">Home
                                 <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect" href="{% url 'mylost:scan' %}">Scan
+                                <span class="sr-only"></span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -133,8 +140,8 @@
                     <form class="d-flex justify-content-center">
                         <!-- Default input -->
 {#                        <input type="search" placeholder="Type your query" aria-label="Search" class="form-control">#}
-                        <a href="{% url 'mylost:index' %}">
-                        <button class="btn btn-primary btn-lg my-0 p" type="submit">My lost.ng</button>
+                        <a href="{% url 'accounts:profile' %}">
+                        <button class="btn btn-primary btn-lg my-0 p">My lost.ng</button>
                         </a>
                     </form>
 
@@ -221,12 +228,33 @@
     <script type="text/javascript" src="{% static 'assets/js/bootstrap.min.js' %}"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="{% static 'assets/js/mdb.min.js' %}"></script>
+    <!-- MDBootstrap Datatables  -->
+    <script type="text/javascript" src="{% static 'assets/js/addons/datatables.min.js' %}"></script>
     <!-- Initializations -->
     <script type="text/javascript">
         // Animations initialization
         new WOW().init();
     </script>
+    <script>
+       $(document).ready(function () {
+      $('#dtBasicExample').DataTable({
+                    dom: 'Bfrtip',
+            buttons: [
+                'copy', 'excel', 'pdf', 'print'
+            ],
+            select: true,
+            keys: true,
+            responsive: true
+        });
+      new $.fn.dataTable.Buttons( table, {
+            buttons: [
+                'copy', 'excel', 'pdf', 'print'
+            ]
+        } );
 
+      $('.dataTables_length').addClass('bs-select');
+        });
+ </script>
     <!-- Charts -->
     <script>
 
@@ -235,25 +263,22 @@
         var myChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                labels: ["Reports", "Found", "Agent request", "Suggestions"],
                 datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
+                    label: 'number of Reports',
+                    data: [{{ reports }}, 2, {{ requests }}, {{ suggest }}],
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
+                        'red',
+                        'green',
+                        'blue',
+                        'pink',
+
                     ],
                     borderColor: [
                         'rgba(255,99,132,1)',
                         'rgba(54, 162, 235, 1)',
                         'rgba(255, 206, 86, 1)',
                         'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
                     ],
                     borderWidth: 1
                 }]
@@ -276,9 +301,9 @@
             data: {
                 datasets: [
                     {
-                        data: [300, 50, 100, 40, 120],
-                        backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360"],
-                        hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+                        data: [{{ reports }},2,{{ requests }},{{ suggest }}],
+                        backgroundColor: ["red", "green", "blue", "pink"],
+                        hoverBackgroundColor: ["red", "green", "blue", "pink"]
                     }
                 ]
             },
