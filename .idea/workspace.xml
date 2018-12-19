@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8736f80c-254f-46f2-80ba-a29915b2597d" name="Default Changelist" comment="Default Changelist" />
+    <list default="true" id="8736f80c-254f-46f2-80ba-a29915b2597d" name="Default Changelist" comment="Default Changelist">
+      <change beforePath="$PROJECT_DIR$/Mylost/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mylost/models.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,51 +36,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Blog/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-648">
-              <folding>
-                <element signature="e#0#42#0" expanded="true" />
-                <element signature="e#997#1034#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Mylost/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="92" column="39" selection-start-line="92" selection-start-column="39" selection-end-line="92" selection-end-column="39" />
-              <folding>
-                <element signature="e#0#42#0" expanded="true" />
-                <element signature="e#1933#2051#0" expanded="true" />
-                <element signature="e#2114#2537#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Mylost/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-145">
-              <caret line="63" selection-start-line="63" selection-end-line="63" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Blog/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#45#0" expanded="true" />
-                <element signature="e#552#753#0" expanded="true" />
-                <element signature="e#1029#1082#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="248">
+              <caret line="55" column="46" lean-forward="true" selection-start-line="55" selection-start-column="46" selection-end-line="55" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -86,7 +48,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Blog/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
+            <state relative-caret-position="204">
               <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
@@ -141,7 +103,6 @@
         <option value="$PROJECT_DIR$/templates/accounts/user_profile.html" />
         <option value="$PROJECT_DIR$/templates/accounts/password_reset_done_form.html" />
         <option value="$PROJECT_DIR$/templates/accounts/password_reset_form.html" />
-        <option value="$PROJECT_DIR$/Blog/urls.py" />
         <option value="$PROJECT_DIR$/templates/mylost/suggest_list.html" />
         <option value="$PROJECT_DIR$/Accounts/urls.py" />
         <option value="$PROJECT_DIR$/templates/base_admin.html" />
@@ -155,12 +116,13 @@
         <option value="$PROJECT_DIR$/Mylost/urls.py" />
         <option value="$PROJECT_DIR$/templates/admin/scan.html" />
         <option value="$PROJECT_DIR$/Accounts/views.py" />
-        <option value="$PROJECT_DIR$/Mylost/models.py" />
         <option value="$PROJECT_DIR$/templates/blog/home.html" />
         <option value="$PROJECT_DIR$/Mylost/admin.py" />
         <option value="$PROJECT_DIR$/Mylost/views.py" />
         <option value="$PROJECT_DIR$/Blog/models.py" />
         <option value="$PROJECT_DIR$/Blog/views.py" />
+        <option value="$PROJECT_DIR$/Blog/urls.py" />
+        <option value="$PROJECT_DIR$/Mylost/models.py" />
       </list>
     </option>
   </component>
@@ -187,12 +149,40 @@
             <path>
               <item name="MyLostApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="mylostapp" type="462c0819:PsiDirectoryNode" />
+              <item name="Accounts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyLostApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mylostapp" type="462c0819:PsiDirectoryNode" />
+              <item name="Accounts" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyLostApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mylostapp" type="462c0819:PsiDirectoryNode" />
               <item name="Blog" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MyLostApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="mylostapp" type="462c0819:PsiDirectoryNode" />
+              <item name="Blog" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyLostApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mylostapp" type="462c0819:PsiDirectoryNode" />
               <item name="Mylost" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyLostApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mylostapp" type="462c0819:PsiDirectoryNode" />
+              <item name="Mylost" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyLostApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mylostapp" type="462c0819:PsiDirectoryNode" />
+              <item name="untitled1" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -237,7 +227,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1535761140003</updated>
-      <workItem from="1545240805785" duration="358000" />
+      <workItem from="1545240805785" duration="935000" />
     </task>
     <task id="LOCAL-00001" summary="Default Changelist">
       <created>1536669595836</created>
@@ -264,12 +254,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="358000" />
+    <option name="totallyTimeSpent" value="935000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="43" y="27" width="1323" height="708" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19251753" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19251753" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Weex Console" weight="0.32874355" />
@@ -285,7 +276,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.6506024" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.43889844" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5030257" side_tool="true" weight="0.31907895" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info active="true" anchor="bottom" id="manage.py@MyLostApp" order="11" sideWeight="0.4969743" visible="true" weight="0.23848684" />
@@ -475,16 +466,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Blog/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="60" selection-start-line="12" selection-start-column="60" selection-end-line="12" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#32#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Accounts/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
@@ -666,29 +647,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Blog/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <element signature="e#401#418#0" expanded="true" />
-            <element signature="e#460#513#0" expanded="true" />
-            <element signature="e#517#553#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Blog/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-648">
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-            <element signature="e#997#1034#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Mylost/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
@@ -701,22 +659,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Mylost/models.py">
+    <entry file="file://$PROJECT_DIR$/Blog/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-145">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
+        <state relative-caret-position="96">
+          <caret line="6" column="17" lean-forward="true" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#208#417#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Blog/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
-          <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+          <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
           <folding>
-            <element signature="e#0#45#0" expanded="true" />
             <element signature="e#552#753#0" expanded="true" />
+            <element signature="e#866#891#0" expanded="true" />
             <element signature="e#1029#1082#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Blog/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+            <element signature="e#467#541#0" expanded="true" />
+            <element signature="e#605#994#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Blog/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#401#418#0" expanded="true" />
+            <element signature="e#460#513#0" expanded="true" />
+            <element signature="e#517#553#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mylost/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="55" column="46" lean-forward="true" selection-start-line="55" selection-start-column="46" selection-end-line="55" selection-end-column="46" />
         </state>
       </provider>
     </entry>

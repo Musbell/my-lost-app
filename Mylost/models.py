@@ -53,14 +53,14 @@ DEVICE_STATUS = (
 )
 class ReportModel(models.Model):
     date = models.DateTimeField(auto_now=True)
-    deviceName = models.CharField(max_length=50)
+    deviceName = models.CharField(max_length=255)
     deviceModel = models.CharField(max_length=50)
-    serialNumber = models.CharField(max_length=100, unique=True)
+    serialNumber = models.CharField(max_length=50, unique=True)
     condition = models.CharField(max_length=50, choices=STATUS, null=True)
     state = models.CharField(max_length=250, choices=STATES, default="")
     email = models.EmailField(blank=True)
     phone = models.CharField(default=0, max_length=15)
-    device_status = models.CharField(max_length=20, choices=DEVICE_STATUS, default='NOT FOUND')
+    device_status = models.CharField(max_length=50, choices=DEVICE_STATUS, default='NOT FOUND')
 
 
     def __str__(self):
