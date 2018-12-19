@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView
 from django.views import generic
 from django.contrib.messages.views import SuccessMessageMixin
-from .models import Blog, SubscribeMail, Comments
+from .models import Blog
 from .forms import BlogForm, SubscriberForm, CommentForm
 
 # Create your views here.
@@ -39,16 +39,16 @@ class BlogDetailView(generic.DetailView):
 
 
 
-class CommentView(SuccessMessageMixin, CreateView):
-    model = Comments
-    form_class = CommentForm
-    success_url = '/blog-detail'
-    template_name = 'blog/comment'
+# class CommentView(SuccessMessageMixin, CreateView):
+#     model = Comments
+#     form_class = CommentForm
+#     success_url = '/blog-detail'
+#     template_name = 'blog/comment'
 
 
-class SubscribeView(SuccessMessageMixin, CreateView):
-    template_name = "blog/subscribe.html"
-    model = SubscribeMail
-    form_class = SubscriberForm
-    success_url = '/blog'
-    success_message = "You have successfully subscribe to our newsletter"
+# class SubscribeView(SuccessMessageMixin, CreateView):
+#     template_name = "blog/subscribe.html"
+#     model = SubscribeMail
+#     form_class = SubscriberForm
+#     success_url = '/blog'
+#     success_message = "You have successfully subscribe to our newsletter"

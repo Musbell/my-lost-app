@@ -3,7 +3,7 @@ from crispy_forms.layout import Submit, HTML
 from crispy_forms.bootstrap import FormActions
 from crispy_forms.layout import Layout, ButtonHolder, Submit
 from django import forms
-from Blog.models import Blog, Comments, SubscribeMail
+from Blog.models import Blog
 import datetime
 from datetime import datetime, timedelta
 from django.conf import settings
@@ -42,67 +42,67 @@ class BlogForm(forms.ModelForm):
         )
 
 
-class CommentForm(forms.ModelForm):
-    class Meta:
-        model = Comments
-        fields = (
-            'name',
-            'image',
-            'email',
-            'comment',
+# class CommentForm(forms.ModelForm):
+#     class Meta:
+#         model = Comments
+#         fields = (
+#             'name',
+#             'image',
+#             'email',
+#             'comment',
 
 
 
-        )
+#         )
 
-    def __init__(self, *args, **kwargs):
-        super(CommentForm, self).__init__(*args, **kwargs)
+#     def __init__(self, *args, **kwargs):
+#         super(CommentForm, self).__init__(*args, **kwargs)
 
-        self.form_name = 'CommentForm'
-        self.helper = FormHelper()
-        self.helper.layout = Layout(
-            'name',
-            'image',
-            'email',
-            'comment',
-
-
-
-            ButtonHolder(
-                Submit('Submit', 'Post', css_class='btn-success')
-            )
-        )
+#         self.form_name = 'CommentForm'
+#         self.helper = FormHelper()
+#         self.helper.layout = Layout(
+#             'name',
+#             'image',
+#             'email',
+#             'comment',
 
 
 
-
-class SubscriberForm(forms.ModelForm):
-    class Meta:
-        model = SubscribeMail
-        fields = (
-            'name',
-            'email',
+#             ButtonHolder(
+#                 Submit('Submit', 'Post', css_class='btn-success')
+#             )
+#         )
 
 
 
 
-        )
-
-    def __init__(self, *args, **kwargs):
-        super(SubscriberForm, self).__init__(*args, **kwargs)
-
-        self.form_name = 'SubscriberForm'
-        self.helper = FormHelper()
-        self.helper.layout = Layout(
-            'name',
-            'email',
+# class SubscriberForm(forms.ModelForm):
+#     class Meta:
+#         model = SubscribeMail
+#         fields = (
+#             'name',
+#             'email',
 
 
 
 
-            ButtonHolder(
-                Submit('Submit', 'Sign up', css_class='btn-success')
-            )
-        )
+#         )
+
+#     def __init__(self, *args, **kwargs):
+#         super(SubscriberForm, self).__init__(*args, **kwargs)
+
+#         self.form_name = 'SubscriberForm'
+#         self.helper = FormHelper()
+#         self.helper.layout = Layout(
+#             'name',
+#             'email',
+
+
+
+
+#             ButtonHolder(
+#                 Submit('Submit', 'Sign up', css_class='btn-success')
+#             )
+#         )
 
 
