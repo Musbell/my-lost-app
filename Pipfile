@@ -29,6 +29,9 @@ requests = "*"
 requests-unixsocket = "*"
 ssh-import-id = "*"
 tornado = "*"
+python-apt = "*"
+python-dateutil = "*"
+python-debian = "*"
 
 [requires]
 python_version = "3.6"
