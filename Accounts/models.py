@@ -28,12 +28,19 @@ class Profile(models.Model):
     def __str__(self):
         return self.user.username
 
-@receiver(post_save, sender=User)
-def create_user_profile(sender, instance, created, **kwargs):
-    if created:
-        Profile.objects.create(user=instance)
+#@receiver(post_save, sender=User)
+#def create_user_profile(sender, instance, created, **kwargs):
+   # if created:
+        #Profile.objects.create(user=instance)
+
+#@receiver(post_save, sender=User)
+#def save_user_profile(sender, instance, **kwargs):
+ #   instance.profile.save()
+
+
 
 @receiver(post_save, sender=User)
-def save_user_profile(sender, instance, **kwargs):
-    instance.profile.save()
-
+def create_profile(sender, **kwargs):
+     if kwargs['created']:
+         user_profile = UserProfile.objects.create(user=kwargs['instance'])
+         post_save.connect(create_profile, sender=User)
