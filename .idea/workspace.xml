@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8736f80c-254f-46f2-80ba-a29915b2597d" name="Default Changelist" comment="Default Changelist" />
+    <list default="true" id="8736f80c-254f-46f2-80ba-a29915b2597d" name="Default Changelist" comment="Default Changelist">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,8 +48,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Blog/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="192">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
                 <element signature="e#401#418#0" expanded="true" />
@@ -61,7 +63,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Accounts/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
+            <state relative-caret-position="400">
               <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
@@ -73,10 +75,23 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Blog/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="11" column="63" selection-start-line="11" selection-start-column="63" selection-end-line="11" selection-end-column="63" />
+            <state relative-caret-position="144">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Blog/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+                <element signature="e#523#724#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -142,8 +157,8 @@
         <option value="$PROJECT_DIR$/Mylost/admin.py" />
         <option value="$PROJECT_DIR$/Mylost/views.py" />
         <option value="$PROJECT_DIR$/Blog/models.py" />
-        <option value="$PROJECT_DIR$/Blog/views.py" />
         <option value="$PROJECT_DIR$/Mylost/models.py" />
+        <option value="$PROJECT_DIR$/Blog/views.py" />
         <option value="$PROJECT_DIR$/Blog/urls.py" />
       </list>
     </option>
@@ -249,7 +264,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1535761140003</updated>
-      <workItem from="1545240805785" duration="1184000" />
+      <workItem from="1545240805785" duration="2287000" />
+      <workItem from="1545248784917" duration="48000" />
     </task>
     <task id="LOCAL-00001" summary="Default Changelist">
       <created>1536669595836</created>
@@ -276,19 +292,14 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1184000" />
+    <option name="totallyTimeSpent" value="2335000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="43" y="27" width="1323" height="708" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19251753" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19296876" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Weex Console" weight="0.32874355" />
-      <window_info anchor="bottom" id="Docker" />
-      <window_info anchor="bottom" id="Tail" />
-      <window_info anchor="bottom" id="RNConsole" />
-      <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32894737" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -301,21 +312,26 @@
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5030257" side_tool="true" weight="0.31907895" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info active="true" anchor="bottom" id="manage.py@MyLostApp" order="11" sideWeight="0.4969743" visible="true" weight="0.23848684" />
-      <window_info anchor="right" id="SvgViewer" />
-      <window_info anchor="right" id="Nativescript Palette" />
-      <window_info anchor="right" id="R Graphics" />
-      <window_info anchor="right" x="0" y="0" width="280" height="508" id="Documentation" side_tool="true" visible="true" weight="0.14185503" />
-      <window_info anchor="right" id="R Packages" />
-      <window_info anchor="right" id="JWT" />
-      <window_info anchor="right" id="JSON Viewer" />
-      <window_info anchor="right" id="SciView" />
-      <window_info anchor="right" id="Api Debugger" />
+      <window_info anchor="bottom" id="Weex Console" order="12" weight="0.32874355" />
+      <window_info anchor="bottom" id="Docker" order="13" />
+      <window_info anchor="bottom" id="RNConsole" order="14" />
+      <window_info anchor="bottom" id="Database Changes" order="15" />
+      <window_info anchor="bottom" id="Tail" order="16" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Remote Host" order="3" />
       <window_info anchor="right" id="Data View" order="4" weight="0.32980332" />
       <window_info anchor="right" id="Database" order="5" weight="0.17927383" />
+      <window_info anchor="right" id="SvgViewer" order="6" />
+      <window_info anchor="right" x="0" y="0" width="280" height="508" id="Documentation" order="7" side_tool="true" visible="true" weight="0.14185503" />
+      <window_info anchor="right" id="Nativescript Palette" order="8" />
+      <window_info anchor="right" id="R Packages" order="9" />
+      <window_info anchor="right" id="JWT" order="10" />
+      <window_info anchor="right" id="JSON Viewer" order="11" />
+      <window_info anchor="right" id="SciView" order="12" />
+      <window_info anchor="right" id="R Graphics" order="13" />
+      <window_info anchor="right" id="Api Debugger" order="14" />
     </layout>
     <layout-to-restore>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -666,18 +682,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Blog/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-          <folding>
-            <element signature="e#552#753#0" expanded="true" />
-            <element signature="e#866#891#0" expanded="true" />
-            <element signature="e#1029#1082#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Blog/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
@@ -699,8 +703,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Blog/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="192">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
             <element signature="e#401#418#0" expanded="true" />
@@ -712,7 +716,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Accounts/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
+        <state relative-caret-position="400">
           <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
@@ -720,10 +724,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Blog/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+            <element signature="e#523#724#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Blog/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="63" selection-start-line="11" selection-start-column="63" selection-end-line="11" selection-end-column="63" />
+        <state relative-caret-position="144">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
